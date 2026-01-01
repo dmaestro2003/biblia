@@ -5,8 +5,23 @@ require('dotenv').config();
 
 const app = express();
 
-// Middleware
-app.use(cors());
+// CORS configuration - allow all origins for now (you can restrict in production)
+const corsOptions = {
+  origin: true, // Allow all origins - change to specific URLs in production
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  preflightContinue: false,
+  optionsSuccessStatus: 204
+};
+
+// Apply CORS middleware first to handle all preflight requests
+app.use(cors(corsOptions));
+
+// Explicitly handle OPTIONS requests for all routes (preflight)
+app.options('*', cors(corsOptions));
+
+// Body parser middleware
 app.use(express.json());
 
 // Routes

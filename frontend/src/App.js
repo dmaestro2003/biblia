@@ -6,6 +6,7 @@ import Quiz from './components/Quiz';
 import Results from './components/Results';
 import Leaderboard from './components/Leaderboard';
 import AdminLogin from './components/Admin/AdminLogin';
+import AdminRegister from './components/Admin/AdminRegister';
 import AdminPanel from './components/Admin/AdminPanel';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/results" element={<Results />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/register" element={<AdminRegister />} />
         <Route path="/admin" element={<AdminPanel />} />
       </Routes>
     </Router>

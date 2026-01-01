@@ -50,7 +50,7 @@ const Quiz = () => {
   const fetchQuestions = async () => {
     try {
       setLoading(true);
-      const response = await api.get(`/questions/random/${level}?count=10`);
+      const response = await api.get(`/api/questions/random/${level}?count=10`);
       setQuestions(response.data);
       setLoading(false);
     } catch (error) {
@@ -67,7 +67,7 @@ const Quiz = () => {
       
       // Get correct answer for feedback
       try {
-        const response = await api.post(`/questions/verify/${questions[currentQuestionIndex]._id}`, {
+        const response = await api.post(`/api/questions/verify/${questions[currentQuestionIndex]._id}`, {
           answer: ''
         });
         
@@ -100,7 +100,7 @@ const Quiz = () => {
 
     // Check if answer is correct (verify with backend)
     try {
-      const response = await api.post(`/questions/verify/${questions[currentQuestionIndex]._id}`, {
+      const response = await api.post(`/api/questions/verify/${questions[currentQuestionIndex]._id}`, {
         answer: answer
       });
       
@@ -140,7 +140,7 @@ const Quiz = () => {
       const finalScore = scoreRef.current;
       
       // Save score to backend
-      await api.post('/scores', {
+      await api.post('/api/scores', {
         playerName,
         score: finalScore,
         level

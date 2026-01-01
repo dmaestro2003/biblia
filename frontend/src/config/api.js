@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+// Get base URL and remove trailing /api if present (since all routes include /api)
+let API_BASE_URL = 'http://localhost:5000';
+// Remove trailing /api to avoid double /api/api/ in URLs
+API_BASE_URL = API_BASE_URL.replace(/\/api\/?$/, '');
 
 const api = axios.create({
   baseURL: API_BASE_URL,

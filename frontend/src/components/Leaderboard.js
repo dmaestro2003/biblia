@@ -16,7 +16,7 @@ const Leaderboard = () => {
   const fetchLeaderboard = async () => {
     try {
       setLoading(true);
-      const response = await api.get('/scores/leaderboard');
+      const response = await api.get('/api/scores/leaderboard');
       setScores(response.data);
       setLoading(false);
     } catch (error) {

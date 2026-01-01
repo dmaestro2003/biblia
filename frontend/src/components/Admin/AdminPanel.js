@@ -39,13 +39,13 @@ const AdminPanel = () => {
       setLoading(true);
       
       if (activeTab === 'questions') {
-        const response = await api.get('/questions/all');
+        const response = await api.get('/api/questions/all');
         setQuestions(response.data);
       } else if (activeTab === 'scores') {
-        const scoresResponse = await api.get('/admin/scores');
+        const scoresResponse = await api.get('/api/admin/scores');
         setScores(scoresResponse.data);
         
-        const statsResponse = await api.get('/admin/stats');
+        const statsResponse = await api.get('/api/admin/stats');
         setStats(statsResponse.data);
       }
       
@@ -101,10 +101,10 @@ const AdminPanel = () => {
       
       if (editingQuestion) {
         // Update question
-        await api.put(`/questions/${editingQuestion._id}`, questionForm);
+        await api.put(`/api/questions/${editingQuestion._id}`, questionForm);
       } else {
         // Create question
-        await api.post('/questions', questionForm);
+        await api.post('/api/questions', questionForm);
       }
 
       // Reset form
@@ -148,7 +148,7 @@ const AdminPanel = () => {
 
     try {
       setLoading(true);
-      await api.delete(`/questions/${id}`);
+      await api.delete(`/api/questions/${id}`);
       await loadData();
     } catch (error) {
       console.error('Error deleting question:', error);

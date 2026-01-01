@@ -21,7 +21,7 @@ const AdminLogin = () => {
 
     try {
       setLoading(true);
-      const response = await api.post('/auth/login', {
+      const response = await api.post('/api/auth/login', {
         username,
         password
       });
@@ -91,6 +91,17 @@ const AdminLogin = () => {
             {loading ? 'Inapakua...' : 'Ingia'}
           </button>
         </form>
+
+        <div className="login-footer">
+          <p>Huna akaunti? 
+            <button 
+              className="link-button" 
+              onClick={() => navigate('/admin/register')}
+            >
+              Sajili hapa
+            </button>
+          </p>
+        </div>
 
         <button className="btn-back" onClick={() => navigate('/')}>
           Rudi Nyumbani

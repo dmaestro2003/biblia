@@ -204,3 +204,4 @@ node -e "require('dotenv').config(); const mongoose = require('mongoose'); mongo
 2. Check backend console for error messages
 3. Check browser console (F12) for network errors
 
+

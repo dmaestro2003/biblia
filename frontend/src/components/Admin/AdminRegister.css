@@ -1,4 +1,4 @@
-.admin-login-container {
+.admin-register-container {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -7,7 +7,7 @@
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-.admin-login-card {
+.admin-register-card {
   background: white;
   border-radius: 20px;
   padding: 40px;
@@ -16,23 +16,23 @@
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
-.admin-login-header {
+.admin-register-header {
   text-align: center;
   margin-bottom: 30px;
 }
 
-.admin-login-header h1 {
+.admin-register-header h1 {
   font-size: 2.5rem;
   color: #667eea;
   margin-bottom: 10px;
 }
 
-.admin-login-header p {
+.admin-register-header p {
   color: #666;
   font-size: 1.1rem;
 }
 
-.admin-login-form {
+.admin-register-form {
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -72,7 +72,7 @@
   font-weight: 500;
 }
 
-.btn-login {
+.btn-register {
   padding: 18px;
   background: #667eea;
   color: white;
@@ -85,25 +85,25 @@
   margin-top: 10px;
 }
 
-.btn-login:hover:not(:disabled) {
+.btn-register:hover:not(:disabled) {
   background: #5568d3;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
-.btn-login:disabled {
+.btn-register:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-.login-footer {
+.register-footer {
   text-align: center;
   margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid #e0e0e0;
 }
 
-.login-footer p {
+.register-footer p {
   color: #666;
   font-size: 1rem;
 }
@@ -145,11 +145,11 @@
 }
 
 @media (max-width: 768px) {
-  .admin-login-card {
+  .admin-register-card {
     padding: 30px 20px;
   }
 
-  .admin-login-header h1 {
+  .admin-register-header h1 {
     font-size: 2rem;
   }
 }
